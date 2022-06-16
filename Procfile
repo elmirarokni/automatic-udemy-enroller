@@ -1,1 +1,1 @@
-web: python udemy_enroller_vanilla.py
+worker: python udemy_enroller_vanilla.py
