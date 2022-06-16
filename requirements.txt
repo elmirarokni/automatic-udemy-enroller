@@ -1,4 +1,4 @@
 requests
 beautifulsoup4
-selenium
+selenium==3.141.0
 webdriver-manager
