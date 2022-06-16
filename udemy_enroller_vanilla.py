@@ -22,6 +22,7 @@ Also, enter the location of your webdriver.
 """
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-gpu")
 # On windows you need the r (raw string) in front of the string to deal with backslashes.
@@ -30,7 +31,7 @@ chrome_options.add_argument("--disable-gpu")
 driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
 
 # Maximizes the browser window since Udemy has a responsive design and the code only works in the maximized layout
-driver.maximize_window()
+# driver.maximize_window()
 
 
 def getUdemyLink(url):
