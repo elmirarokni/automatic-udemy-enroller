@@ -71,13 +71,13 @@ def udemyLogin(email_text, password_text):
 
     driver.get("https://www.udemy.com/join/login-popup/")
 
-    email = driver.find_element_by_name("email")
-    password = driver.find_element_by_name("password")
+    email = driver.find_element(by=By.NAME, value=email)
+    password = driver.find_element(by=By.NAME, value=password)
 
     email.send_keys(email_text)
     password.send_keys(password_text)
 
-    driver.find_element_by_name("submit").click()
+    driver.find_element(by=By.NAME, value=submit).click()
 
 
 def redeemUdemyCourse(url):
