@@ -1,3 +1,4 @@
+import os
 from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
@@ -19,11 +20,14 @@ By default, the webdriver for Microsoft Edge browser has been chosen in the code
 
 Also, enter the location of your webdriver.
 """
-
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-gpu")
 # On windows you need the r (raw string) in front of the string to deal with backslashes.
-path = "msedgedriver.exe"  # Replace this string with the path for your webdriver
+#  path = "msedgedriver.exe"  # Replace this string with the path for your webdriver
 # webdriver.Chrome(path) for Google Chrome, webdriver.Firefox(path) for Mozilla Firefox, webdriver.Edge(path) for Microsoft Edge, webdriver.Safari(path) for Apple Safari
-driver = webdriver.Edge(path)
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
 
 # Maximizes the browser window since Udemy has a responsive design and the code only works in the maximized layout
 driver.maximize_window()
