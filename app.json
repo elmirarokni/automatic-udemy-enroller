@@ -1,0 +1,29 @@
+{
+  "name": "automatic-udemy-enroller",
+  "description": "A bot which scrapes coupon code & auto-enrolls you to that course.",
+  "repository": "https://github.com/elmirarokni/automatic-udemy-enroller",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+    }
+  ],
+  "env": {
+    "CHROMEDRIVER_PATH": {
+      "description":"DON'T CHANGE 'Chromedriver path' DON'T CHANGE",
+      "value": "/app/.chromedriver/bin/chromedriver",
+      "required": true
+    },
+    "GOOGLE_CHROME_BIN": {
+      "description":"DON'T CHANGE 'Google Chrome path' DON'T CHANGE",
+      "value": "/app/.apt/usr/bin/google-chrome",
+      "required": true
+    }
+  }
+}
